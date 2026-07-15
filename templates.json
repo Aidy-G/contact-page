@@ -2,7 +2,7 @@
   "templates": [
     {
       "id": "yellow",
-      "label": "צהוב - תמונה אחת",
+      "label": "צהוב",
       "group": "single",
       "background": "./assets/yellow-bg.png",
       "titleColor": "#e67600",
@@ -14,7 +14,7 @@
     },
     {
       "id": "blue",
-      "label": "תכלת - תמונה אחת",
+      "label": "תכלת",
       "group": "single",
       "background": "./assets/blue-bg.png",
       "titleColor": "#0067b8",
