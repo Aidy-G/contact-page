@@ -365,6 +365,8 @@ button.primary:hover {
   font-size: 13px;
   font-weight: 600;
   color: var(--date-color);
+  z-index: 30;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
 .bsd {
@@ -374,6 +376,8 @@ button.primary:hover {
   font-size: 13px;
   font-weight: 600;
   color: var(--date-color);
+  z-index: 30;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
 .page-header {
@@ -813,14 +817,18 @@ button.primary:hover {
 .layout-7-b .apply-all-btn { top: 68%; transform: translateY(-50%); font-size: 8px; padding: 2px 4px; }
 
 /* 8 images — 2×4 grid */
+.layout-8-a .image-slot {
+  gap: 1px;
+}
+
 .layout-8-a .image-slot:nth-child(1),
-.layout-8-a .image-slot:nth-child(2) { top: 4%; z-index: 8; }
+.layout-8-a .image-slot:nth-child(2) { top: 3%; z-index: 8; }
 .layout-8-a .image-slot:nth-child(3),
-.layout-8-a .image-slot:nth-child(4) { top: 30%; z-index: 6; }
+.layout-8-a .image-slot:nth-child(4) { top: 28%; z-index: 6; }
 .layout-8-a .image-slot:nth-child(5),
-.layout-8-a .image-slot:nth-child(6) { top: 56%; z-index: 4; }
+.layout-8-a .image-slot:nth-child(6) { top: 53%; z-index: 4; }
 .layout-8-a .image-slot:nth-child(7),
-.layout-8-a .image-slot:nth-child(8) { top: 82%; z-index: 2; }
+.layout-8-a .image-slot:nth-child(8) { top: 78%; z-index: 2; }
 .layout-8-a .image-slot:nth-child(1) { right: 3%; width: 46%; }
 .layout-8-a .image-slot:nth-child(2) { left: 3%; width: 46%; }
 .layout-8-a .image-slot:nth-child(3) { right: 3%; width: 46%; }
@@ -829,7 +837,19 @@ button.primary:hover {
 .layout-8-a .image-slot:nth-child(6) { left: 3%; width: 46%; }
 .layout-8-a .image-slot:nth-child(7) { right: 3%; width: 46%; }
 .layout-8-a .image-slot:nth-child(8) { left: 3%; width: 46%; }
-.layout-8-a .dropzone { min-height: 34mm; height: 34mm; z-index: 1; }
+.layout-8-a .dropzone { min-height: 28mm; height: 28mm; z-index: 1; }
+.layout-8-a .caption-input {
+  min-height: 4mm;
+  font-size: 13px;
+  line-height: 1.1;
+  margin-top: -2px;
+}
+.layout-8-a .apply-all-btn {
+  font-size: 8px;
+  padding: 2px 4px;
+  line-height: 1.15;
+  margin-top: -1px;
+}
 
 /* 8 images — 4×2 grid */
 .layout-8-b .image-slot:nth-child(1) { top: 10%; right: 1%; width: 23%; }
@@ -846,7 +866,6 @@ button.primary:hover {
 .layout-6-a .caption-input,
 .layout-6-b .caption-input,
 .layout-7-a .caption-input,
-.layout-8-a .caption-input,
 .layout-8-b .caption-input {
   min-height: 6mm;
   font-size: 16px;
