@@ -96,7 +96,7 @@ const LAYOUT_PREVIEWS = {
     b: [[54, 5, 40, 18], [54, 29, 40, 18], [54, 53, 40, 18], [54, 77, 40, 18]]
   },
   5: {
-    a: [[4, 6, 43, 34], [53, 6, 43, 34], [2, 48, 30, 28], [35, 48, 30, 28], [68, 48, 30, 28]],
+    a: [[4, 6, 43, 32], [4, 46, 43, 32], [53, 6, 43, 32], [53, 46, 43, 32], [27, 76, 46, 20]],
     b: [[54, 4, 40, 16], [54, 22, 40, 16], [54, 40, 40, 16], [54, 58, 40, 16], [54, 76, 40, 16]]
   },
   6: {
@@ -104,7 +104,7 @@ const LAYOUT_PREVIEWS = {
     b: [[2, 8, 30, 38], [35, 8, 30, 38], [68, 8, 30, 38], [2, 54, 30, 38], [35, 54, 30, 38], [68, 54, 30, 38]]
   },
   7: {
-    a: [[2, 4, 30, 28], [35, 4, 30, 28], [68, 4, 30, 28], [1, 46, 22, 24], [26, 46, 22, 24], [51, 46, 22, 24], [76, 46, 22, 24]],
+    a: [[4, 4, 43, 20], [4, 28, 43, 20], [4, 52, 43, 20], [53, 4, 43, 20], [53, 28, 43, 20], [53, 52, 43, 20], [27, 76, 46, 20]],
     b: [[54, 2, 40, 12], [54, 16, 40, 12], [54, 30, 40, 12], [54, 44, 40, 12], [54, 58, 40, 12], [54, 72, 40, 12], [54, 86, 40, 12]]
   },
   8: {
@@ -301,7 +301,9 @@ function renderLayoutPicker() {
 
 function renderPagesBar() {
   pagesBar.innerHTML = "";
-  pageCountInput.value = String(pages.length);
+  if (document.activeElement !== pageCountInput) {
+    pageCountInput.value = String(pages.length);
+  }
   pages.forEach((page, i) => {
     const chip = document.createElement("button");
     chip.type = "button";
@@ -455,7 +457,8 @@ function clonePageSlots(sourceIndex) {
 }
 
 function setPageCount(rawCount) {
-  let target = Math.round(Number(rawCount) || MIN_PAGES);
+  const cleaned = String(rawCount).replace(/\D/g, "");
+  let target = Math.round(Number(cleaned) || MIN_PAGES);
   target = Math.max(MIN_PAGES, Math.min(MAX_PAGES, target));
   pageCountInput.value = String(target);
 
@@ -572,8 +575,13 @@ function buildEditablePage(pageIndex) {
       }
     });
 
+    applyBtn.addEventListener("mousedown", (e) => {
+      e.stopPropagation();
+    });
+
     applyBtn.addEventListener("click", (e) => {
       e.stopPropagation();
+      e.preventDefault();
       if (isSlotShared(i)) {
         unshareSlot(i);
         return;

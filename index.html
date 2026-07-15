@@ -11,7 +11,6 @@
       <div class="brand">
         <div>
           <h1>דף תרחיש</h1>
-          <p class="brand-sub">Scenario Page · 2 עמודי A5 על כל דף A4</p>
         </div>
         <button id="helpToggle" type="button" class="help-btn" title="הוראות שימוש">?</button>
       </div>
@@ -22,7 +21,6 @@
           <li>בחרי <strong>כמות תמונות</strong> (1–8).</li>
           <li>בחרי <strong>עימוד</strong> (לחיצה על הריבועים).</li>
           <li>בחרי <strong>צבע / תבנית</strong> (צהוב/תכלת לתמונה אחת, ירוק/ורוד ליותר).</li>
-          <li>כתבי <strong>כותרת</strong> ואופציונלית <strong>כותרת משנה</strong> (פונט קטן יותר).</li>
           <li>גררי או העלי <strong>תמונות</strong> לכל משבצת, וכתבי <strong>כיתוב</strong> מתחת.</li>
           <li>לתמונות של כל הכיתה: לחצי <strong>החל על כל העמודים</strong> — שינויים יתעדכנו בכל העמודים. לחיצה שוב על <strong>ביטול החלה</strong> מאפשרת לשנות רק בעמוד הנוכחי.</li>
           <li>לכל ילד / עותק: הזיני <strong>כמות עמודים</strong> בשדה המספר (או + / −) — נפתחים או נסגרים עמודים בהתאם.</li>
@@ -60,13 +58,13 @@
         </label>
         <label>
           כותרת משנה
-          <input id="subtitleInput" type="text" placeholder="אופציונלי — מוצג בפונט קטן יותר" />
+          <input id="subtitleInput" type="text"/>
         </label>
         <label>
           כמות עמודים
           <div class="page-count-control">
             <button id="pageCountDec" type="button" class="ghost step-btn" title="הסרת עמוד">−</button>
-            <input id="pageCountInput" type="number" min="1" max="60" value="1" />
+            <input id="pageCountInput" type="text" inputmode="numeric" pattern="[0-9]*" value="1" />
             <button id="pageCountInc" type="button" class="ghost step-btn" title="הוספת עמוד">+</button>
           </div>
         </label>
